@@ -1,8 +1,6 @@
-package net.codejava;
+package net.codejava.controller;
 
-import java.util.Arrays;
-import java.util.List;
-
+import net.codejava.model.Product;
 import net.codejava.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class MvcController {
+public class ProductController {
 
 	@Autowired
 	private IProductService productService;
@@ -41,23 +39,5 @@ public class MvcController {
 		System.out.println(product);
 		productService.save(product);
 		return "redirect:/merchandise-table";
-	}
-	
-	@GetMapping("/register")
-	public String showForm(Model model) {
-		User user = new User();
-		user.setName("Nam Ha Minh");
-		model.addAttribute("user", user);
-		
-		List<String> professionList = Arrays.asList("Developer", "Designer", "Tester", "Architect");
-		model.addAttribute("professionList", professionList);
-		
-		return "register_form";
-	}
-	
-	@PostMapping("/register")
-	public String submitForm(@ModelAttribute("user") User user) {
-		System.out.println(user);
-		return "register_success";
 	}
 }

@@ -1,6 +1,6 @@
 package net.codejava.service;
 
-import net.codejava.Product;
+import net.codejava.model.Product;
 
 import java.util.List;
 

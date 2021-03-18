@@ -1,6 +1,6 @@
 package net.codejava.service;
 
-import net.codejava.Product;
+import net.codejava.model.Product;
 import net.codejava.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
