@@ -1,0 +1,32 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<html>
+
+<head>
+    <title>Todo Management</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, .page {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Lato', Helvetica, Arial, sans-serif;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+
+</head>
+
+<body>
