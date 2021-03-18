@@ -59,6 +59,17 @@
 
         .delete_item_button {
             padding: 5px 10px;
+            background-color: transparent;
+            color: #282828;
+            font-weight: 600;
+            border: 1px solid #282828;
+            cursor: pointer;
+            border-radius: 2px;
+            outline: none;
+            -webkit-transition: background 0.5s ease-out;
+            -moz-transition: background 0.5s ease-out;
+            -o-transition: background 0.5s ease-out;
+            -ms-transition: background 0.5s ease-out;
         }
     </style>
 

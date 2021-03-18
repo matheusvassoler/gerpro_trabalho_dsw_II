@@ -28,4 +28,7 @@ public class ProductService implements IProductService {
 		repository.deleteById(productId);
 	}
 
+	public Product getProduct(Long id) {
+		return repository.findById(id).get();
+	}
 }

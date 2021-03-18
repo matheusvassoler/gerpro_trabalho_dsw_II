@@ -43,6 +43,7 @@
 				        	<th>Quantidade</th>
 				        	<th>Preço</th>
 				        	<th></th>
+							<th></th>
 				      	</tr>
 			    	</thead>
 					<tbody>
@@ -58,6 +59,12 @@
 									<form:form action="delete-product" modelAttribute="product" method="post">
 										<form:input type="hidden" name="product_id" value="${product.id}" path="id" />
 										<form:button class="delete_item_button">Excluir</form:button>
+									</form:form>
+								</td>
+								<td>
+									<form:form action="edit-product" modelAttribute="product" method="get">
+										<form:input type="hidden" name="product_id" value="${product.id}" path="id" />
+										<form:button class="delete_item_button">Editar</form:button>
 									</form:form>
 								</td>
 							</tr>

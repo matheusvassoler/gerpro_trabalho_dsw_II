@@ -38,7 +38,6 @@ public class ProductController {
 	@PostMapping("/register-product")
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		product.setId(0L);
-		System.out.println(product);
 		productService.save(product);
 		return "redirect:/merchandise-table";
 	}
@@ -46,6 +45,19 @@ public class ProductController {
 	@PostMapping("/delete-product")
 	public String deleteProduct(@ModelAttribute("product") Product product) {
 		productService.delete(product.getId().longValue());
+		return "redirect:/merchandise-table";
+	}
+
+	@GetMapping("/edit-product")
+	public String showEditMerchandisePage(@ModelAttribute("product") Product product, Model model) {
+		Product selectedProduct = productService.getProduct(product.getId());
+		model.addAttribute("product", selectedProduct);
+		return "edit_product";
+	}
+
+	@PostMapping("/edit-product")
+	public String editProduct(@ModelAttribute("product") Product product) {
+		productService.save(product);
 		return "redirect:/merchandise-table";
 	}
 }
