@@ -9,4 +9,6 @@ public interface IProductService {
 	List<Product> getProducts();
 
 	void save(Product product);
+
+	void delete(Long productId);
 }

@@ -22,7 +22,9 @@ public class ProductController {
 
 	@RequestMapping(value = "/merchandise-table", method = RequestMethod.GET)
 	public String showRegisterProductPage(ModelMap model) {
+		Product product = new Product();
 		model.put("products", productService.getProducts());
+		model.put("product", product);
 		return "merchandise-table";
 	}
 
@@ -35,9 +37,15 @@ public class ProductController {
 
 	@PostMapping("/register-product")
 	public String saveProduct(@ModelAttribute("product") Product product) {
-		product.setId(0);
+		product.setId(0L);
 		System.out.println(product);
 		productService.save(product);
+		return "redirect:/merchandise-table";
+	}
+
+	@PostMapping("/delete-product")
+	public String deleteProduct(@ModelAttribute("product") Product product) {
+		productService.delete(product.getId().longValue());
 		return "redirect:/merchandise-table";
 	}
 }

@@ -56,6 +56,10 @@
         .container table {
             margin-top: 50px;
         }
+
+        .delete_item_button {
+            padding: 5px 10px;
+        }
     </style>
 
 </head>

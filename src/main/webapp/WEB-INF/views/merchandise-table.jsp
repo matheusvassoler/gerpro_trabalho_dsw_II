@@ -1,5 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		 pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -51,10 +55,10 @@
 								<td>${product.quantity}</td>
 								<td>${product.price}</td>
 								<td>
-									<form action="Delete" method="post">
-										<input type="hidden" name="product_id" value="${product.id}">
-										<input type="submit" class="delete_item_button" value="excluir" />
-									</form>
+									<form:form action="delete-product" modelAttribute="product" method="post">
+										<form:input type="hidden" name="product_id" value="${product.id}" path="id" />
+										<form:button class="delete_item_button">Excluir</form:button>
+									</form:form>
 								</td>
 							</tr>
 						</c:forEach>
